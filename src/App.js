@@ -1,15 +1,21 @@
 import React from 'react';
 import './App.css';
-import {Home, Room, SingleRoom, Error } from './components/index'
+import {Home, Rooms, SingleRoom, Error } from './components/index'
+// import Error from "./pages/Error"
+
+import {Route, Switch} from 'react-router-dom'
 
 function App() {
   return (
     <div>
-      hello from app
-      <Home/>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/rooms/" component={Rooms} />
+      <Route exact path="/rooms/:place" component={SingleRoom}/>
+
+      {/* <Home/>
       <Room/>
       <SingleRoom/>
-      <Error/>
+      <Error/> */}
       </div>
   );
 }
